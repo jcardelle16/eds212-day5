@@ -1,0 +1,57 @@
+---
+title: "EDS 212 Day 5a"
+author: "Josephine Cardelle"
+format: html
+execute: 
+  warning: false
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| message: false
+# load library ----
+library(tidyverse)
+
+```
+
+```{r}
+#| include: false
+# do some data exploration ----
+head(starwars)
+tail(starwars)
+dim(starwars)
+```
+
+create a ggplot (scatterplot)
+```{r}
+#| echo: false 
+ggplot(starwars, aes(x = height, y = mass, colour = mass)) +
+  geom_point() + 
+  labs(x = "Height (cm)", 
+       y = "Mass (kg)")
+
+```
+
+
+Create a Histogram
+```{r}
+#| fig-cap: "This is my figure caption"
+#| fig-alt: "This is some alt text"
+ggplot(starwars, aes(x = height)) + 
+  geom_histogram(
+              fill = "purple", 
+                 color = "orange") +
+  labs(x = "Height (cm)",
+       y = "Count")
+```
+
+
+
+```{r}
+sw_height_mean <- round(mean(starwars$height, na.rm = TRUE), 3)
+```
+
+The mean height of all starwars characters is `r sw_height_mean`
+
