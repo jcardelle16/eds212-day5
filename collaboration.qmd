@@ -1,0 +1,6 @@
+---
+title: "collaboration"
+author: "Kimmy & Jo"
+format: html
+---
+this is the script for our new sitcom ---
